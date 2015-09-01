@@ -6,6 +6,10 @@
 #' element is replaced.
 #'
 #' @return \code{Vector} with all NA elements replaced by \code{replacement}.
+#' 
+#' Note that factors will be releveled with the replacement values and levels
+#' no longer present in the factor may be lost.
+#'
 #' @export
 #'
 #' @examples
@@ -31,6 +35,10 @@ replace_na <- function(vector, replacement, warn = TRUE) {
 #'
 #' @return \code{Vector} with all instances of \code{value} replaced by 
 #' \code{replacement}.
+#' 
+#' Note that factors will be releveled with the replacement values and levels
+#' no longer present in the factor may be lost.
+#'
 #' @export
 #'
 #' @examples
@@ -53,8 +61,12 @@ replace_value <- function(vector, replacement, value, warn = TRUE) {
 #'
 #' @return \code{Vector} with all elements matching \code{regex} replaced by 
 #' \code{replacement}.
-#' @export
 #'
+#' Note that factors will be releveled with the replacement values and levels
+#' no longer present in the factor may be lost.
+#'
+#' @export
+#' 
 #' @examples
 #' replace_value(c("Farmworker", "Programmer", "Farmhand", "Pole vaulter", 
 #'       "Farmer", "Dancer"), replacement = "Farmer", regex = "^Farm.")
@@ -113,6 +125,9 @@ replace_internal <- function(vector, replacement, warn, f, description) {
 #' \code{replacements}. That is, if the 3rd element of \code{values} is found 
 #' anywhere in \code{vector}, it will be replaced by the 3rd element of 
 #' \code{replacements}.
+#' 
+#' Note that factors will be releveled with the replacement values and levels
+#' no longer present in the factor may be lost.
 #' 
 #' @export
 #'

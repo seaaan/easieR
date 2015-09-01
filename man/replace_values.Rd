@@ -27,6 +27,9 @@ found, it will be replaced in \code{vector} with the corresponding element of
 \code{replacements}. That is, if the 3rd element of \code{values} is found
 anywhere in \code{vector}, it will be replaced by the 3rd element of
 \code{replacements}.
+
+Note that factors will be releveled with the replacement values and levels
+no longer present in the factor may be lost.
 }
 \description{
 Replace multiple unique elements with multiple unique replacements.

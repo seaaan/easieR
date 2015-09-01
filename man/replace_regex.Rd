@@ -19,6 +19,9 @@ element is replaced.}
 \value{
 \code{Vector} with all elements matching \code{regex} replaced by
 \code{replacement}.
+
+Note that factors will be releveled with the replacement values and levels
+no longer present in the factor may be lost.
 }
 \description{
 Replace elements matching a regular expression with \code{replacement}.

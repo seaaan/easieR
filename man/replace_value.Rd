@@ -19,6 +19,9 @@ element is replaced.}
 \value{
 \code{Vector} with all instances of \code{value} replaced by
 \code{replacement}.
+
+Note that factors will be releveled with the replacement values and levels
+no longer present in the factor may be lost.
 }
 \description{
 Replace values identical to \code{value} with \code{replacement}.

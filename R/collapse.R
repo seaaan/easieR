@@ -23,8 +23,9 @@ collapse_to_sentence <- function(vector, conjunction = "and",
    oxford_comma <- ifelse(oxford_comma, ", ", " ")
    
    if (length(vector) <= 1) {
-      stop_h("Vector '", substitute(vector), "' must contain more than one ", 
-            "element, but contains ", length(vector), ".")
+      stop_h("Vector '", deparse(substitute(vector)), 
+            "' must contain more than one element, but contains ", 
+            length(vector), ".")
    } else if (length(vector) == 2) {
       result <- paste0(vector, collapse = paste0(" ", conjunction, " "))
    } else {
@@ -59,8 +60,9 @@ collapse_slash <- function(vector, forward = TRUE, terminal_slash = TRUE) {
    terminal_slash <- ifelse(terminal_slash, slash, "")
    
    if (length(vector) <= 1) {
-      stop_h("Vector '", substitute(vector), "' must contain more than one ", 
-         "element, but contains ", length(vector), ".")
+      stop_h("Vector '", deparse(substitute(vector)), 
+         "' must contain more than one element, but contains ", 
+         length(vector), ".")
    } else {
       result <- paste0(vector, collapse = slash)
    }

@@ -1,0 +1,14 @@
+Package: easieR
+Title: Functions to make R easier
+Version: 0.1
+Authors@R: person("Sean", "Hughes", email = "smhughes@uw.edu",
+   role = c("aut", "cre"))
+Description: A collection of R helper functions.
+Depends: R (>= 2.1.4)
+License: GPL-3
+LazyData: TRUE
+URL: https://github.com/seaaan/easieR
+BugReports: https://github.com/seaaan/easieR/issues
+Suggests: testthat,
+    knitr
+VignetteBuilder: knitr

@@ -65,17 +65,17 @@ replace_regex <- function(vector, replacement, regex, warn = TRUE) {
    return(replace_internal(vector, replacement, warn, f, "matching values"))
 }
 
-#' Helper function for \code{replace_*} functions.
-#'
-#' @param vector Vector to make replacements in.
-#' @param replacement Value to replace with (assumed to be a single element).
-#' @param warn Logical indicating whether to issue a warning message if no
-#' element is replaced.
-#' @param f Function to determine which elements of vector to replace.
-#' @param description Single-element character vector describing the type of 
-#' match. 
-#'
-#' @return \code{Vector} with matches replaced.
+# Helper function for \code{replace_*} functions.
+#
+# @param vector Vector to make replacements in.
+# @param replacement Value to replace with (assumed to be a single element).
+# @param warn Logical indicating whether to issue a warning message if no
+# element is replaced.
+# @param f Function to determine which elements of vector to replace.
+# @param description Single-element character vector describing the type of 
+# match. 
+#
+# @return \code{Vector} with matches replaced.
 replace_internal <- function(vector, replacement, warn, f, description) {
    indices <- f(vector)
    

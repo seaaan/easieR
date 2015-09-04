@@ -4,16 +4,16 @@
 \alias{replace_values}
 \title{Replace multiple unique elements with multiple unique replacements.}
 \usage{
-replace_values(vector, replacements, values, warn = TRUE)
+replace_values(vector, values, replacements, warn = TRUE)
 }
 \arguments{
 \item{vector}{Vector to make replacements in.}
 
-\item{replacements}{Values to replace matches with (vector of same length as
-\code{values}).}
-
 \item{values}{Values to be replaced (vector of same length as
 \code{replacements}).}
+
+\item{replacements}{Values to replace matches with (vector of same length as
+\code{values}).}
 
 \item{warn}{Logical indicating whether to issue a warning message if no
 element is replaced.}
@@ -37,12 +37,11 @@ Replace multiple unique elements with multiple unique replacements.
 \examples{
 replace_values(
    vector = c("WA", "WY", "OR", "NY", "NY", "WA", "FL", "OR"),
-   replacements = c("Florida", "New York", "Oregon", "Washington", "Wyoming"),
-   values = c("FL", "NY", "OR", "WA", "WY"))
+   values = c("FL", "NY", "OR", "WA", "WY"),
+   replacements = c("Florida", "New York", "Oregon", "Washington", "Wyoming"))
 replace_values(
    vector = c("M", "F", "F", "M", "F", "M", "F", "M", "M", "M", "F", "F"),
-   replacements = c("Female", "Male"),
-   values = c("F", "M")
-)
+   values = c("F", "M"),
+   replacements = c("Female", "Male"))
 }
 

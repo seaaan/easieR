@@ -28,8 +28,8 @@ replace_na <- function(vector, replacement, warn = TRUE) {
 #' Replace values identical to \code{value} with \code{replacement}.
 #'
 #' @param vector Vector to replace matches in.
-#' @param replacement Value to replace matches with (must be a single element).
 #' @param value Value to be replaced (must be a single element).
+#' @param replacement Value to replace matches with (must be a single element).
 #' @param warn Logical indicating whether to issue a warning message if no 
 #' element is replaced.
 #'
@@ -42,9 +42,9 @@ replace_na <- function(vector, replacement, warn = TRUE) {
 #' @export
 #'
 #' @examples
-#' replace_value(c("Lions", "Tigers", "Antelopes"), replacement = "Bears", 
-#'    value = "Antelopes")
-replace_value <- function(vector, replacement, value, warn = TRUE) {
+#' replace_value(c("Lions", "Tigers", "Antelopes"), value = "Antelopes", 
+#'    replacement = "Bears")
+replace_value <- function(vector, value, replacement, warn = TRUE) {
    validate_single_element(replacement, deparse(substitute(replacement)))
    validate_single_element(value, deparse(substitute(value)))
    f <- function(x) which(x == value)
@@ -54,8 +54,8 @@ replace_value <- function(vector, replacement, value, warn = TRUE) {
 #' Replace elements matching a regular expression with \code{replacement}.
 #'
 #' @param vector Vector to replace matches in.
-#' @param replacement Value to replace matches with (must be a single element).
 #' @param regex A regular expression (must be a single element).
+#' @param replacement Value to replace matches with (must be a single element).
 #' @param warn Logical indicating whether to issue a warning message if no 
 #' element is replaced.
 #'
@@ -68,9 +68,9 @@ replace_value <- function(vector, replacement, value, warn = TRUE) {
 #' @export
 #' 
 #' @examples
-#' replace_value(c("Farmworker", "Programmer", "Farmhand", "Pole vaulter", 
-#'       "Farmer", "Dancer"), replacement = "Farmer", regex = "^Farm.")
-replace_regex <- function(vector, replacement, regex, warn = TRUE) {
+#' replace_regex(c("Farmworker", "Programmer", "Farmhand", "Pole vaulter", 
+#'       "Farmer", "Dancer"), regex = "^Farm.", replacement = "Farmer")
+replace_regex <- function(vector, regex, replacement, warn = TRUE) {
    validate_single_element(replacement, deparse(substitute(replacement)))
    validate_single_element(regex, deparse(substitute(regex)))
    f <- function(x) which(grepl(pattern = regex, x = x))
@@ -110,10 +110,10 @@ replace_internal <- function(vector, replacement, warn, f, description) {
 #' Replace multiple unique elements with multiple unique replacements.
 #'
 #' @param vector Vector to make replacements in.
-#' @param replacements Values to replace matches with (vector of same length as
-#' \code{values}).
 #' @param values Values to be replaced (vector of same length as 
 #' \code{replacements}).
+#' @param replacements Values to replace matches with (vector of same length as
+#' \code{values}).
 #' @param warn Logical indicating whether to issue a warning message if no 
 #' element is replaced.
 #'
@@ -134,14 +134,13 @@ replace_internal <- function(vector, replacement, warn, f, description) {
 #' @examples
 #' replace_values(
 #'    vector = c("WA", "WY", "OR", "NY", "NY", "WA", "FL", "OR"), 
-#'    replacements = c("Florida", "New York", "Oregon", "Washington", "Wyoming"), 
-#'    values = c("FL", "NY", "OR", "WA", "WY"))
+#'    values = c("FL", "NY", "OR", "WA", "WY"),
+#'    replacements = c("Florida", "New York", "Oregon", "Washington", "Wyoming")) 
 #' replace_values(
 #'    vector = c("M", "F", "F", "M", "F", "M", "F", "M", "M", "M", "F", "F"),
-#'    replacements = c("Female", "Male"),
-#'    values = c("F", "M")
-#' )
-replace_values <- function(vector, replacements, values, warn = TRUE) {
+#'    values = c("F", "M"), 
+#'    replacements = c("Female", "Male"))
+replace_values <- function(vector, values, replacements, warn = TRUE) {
    validate_equal_length(replacements, values, 
          deparse(substitute(replacements)), deparse(substitute(values)))
    

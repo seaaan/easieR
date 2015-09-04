@@ -4,14 +4,14 @@
 \alias{replace_value}
 \title{Replace values identical to \code{value} with \code{replacement}.}
 \usage{
-replace_value(vector, replacement, value, warn = TRUE)
+replace_value(vector, value, replacement, warn = TRUE)
 }
 \arguments{
 \item{vector}{Vector to replace matches in.}
 
-\item{replacement}{Value to replace matches with (must be a single element).}
-
 \item{value}{Value to be replaced (must be a single element).}
+
+\item{replacement}{Value to replace matches with (must be a single element).}
 
 \item{warn}{Logical indicating whether to issue a warning message if no
 element is replaced.}
@@ -27,7 +27,7 @@ no longer present in the factor may be lost.
 Replace values identical to \code{value} with \code{replacement}.
 }
 \examples{
-replace_value(c("Lions", "Tigers", "Antelopes"), replacement = "Bears",
-   value = "Antelopes")
+replace_value(c("Lions", "Tigers", "Antelopes"), value = "Antelopes",
+   replacement = "Bears")
 }
 

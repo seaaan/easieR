@@ -4,14 +4,14 @@
 \alias{replace_regex}
 \title{Replace elements matching a regular expression with \code{replacement}.}
 \usage{
-replace_regex(vector, replacement, regex, warn = TRUE)
+replace_regex(vector, regex, replacement, warn = TRUE)
 }
 \arguments{
 \item{vector}{Vector to replace matches in.}
 
-\item{replacement}{Value to replace matches with (must be a single element).}
-
 \item{regex}{A regular expression (must be a single element).}
+
+\item{replacement}{Value to replace matches with (must be a single element).}
 
 \item{warn}{Logical indicating whether to issue a warning message if no
 element is replaced.}
@@ -27,7 +27,7 @@ no longer present in the factor may be lost.
 Replace elements matching a regular expression with \code{replacement}.
 }
 \examples{
-replace_value(c("Farmworker", "Programmer", "Farmhand", "Pole vaulter",
-      "Farmer", "Dancer"), replacement = "Farmer", regex = "^Farm.")
+replace_regex(c("Farmworker", "Programmer", "Farmhand", "Pole vaulter",
+      "Farmer", "Dancer"), regex = "^Farm.", replacement = "Farmer")
 }
 

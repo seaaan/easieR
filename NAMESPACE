@@ -2,6 +2,7 @@
 
 export(collapse_slash)
 export(collapse_to_sentence)
+export(format_p)
 export(replace_na)
 export(replace_regex)
 export(replace_value)
